@@ -11,10 +11,13 @@ namespace task3
     public class HumanPlayer : IPlayer
     {
         private readonly DiceManager diceManager;
+
         private readonly DiceProbabilityCalculator probabilityCalculator;
+
         private readonly DiceProbabilityTableRenderer tableRenderer;
 
         public int Score { get;private set; }
+
         public Dice Dice { get; private set; }
 
         public HumanPlayer(Dice dice, DiceManager diceManager)
@@ -88,7 +91,7 @@ namespace task3
             Console.WriteLine($"My number is {botChoice} (KEY={SecretKeyText})");
             CalculateResult(botChoice, humanChoice);
         }
-      
+
         private int ChooseNumberModulo(IPlayer human)
         {
             Console.WriteLine($"Add your number modulo {Dice.Modulo}.");           

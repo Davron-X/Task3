@@ -10,6 +10,7 @@ namespace task3
             RandomNumberGenerator.Fill(secretKey);
             return secretKey;
         }
+
         public static string ConvertKeyToString(byte[] secretKey)
         {
            return BitConverter.ToString(secretKey).Replace("-", "");

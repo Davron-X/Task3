@@ -13,6 +13,7 @@ namespace task3
         private readonly DiceManager diceManager;
 
         public int Score { get;private set; }
+
         public Dice Dice { get; private set; }
         
         public BotPlayer(Dice dice, DiceManager diceManager)
@@ -20,6 +21,7 @@ namespace task3
             Dice = dice;
             this.diceManager = diceManager;
         }
+
         public BotPlayer(DiceManager diceManager) :this(new Dice(), diceManager) { }
        
         public (int,string) MakeChoice(int ceil=6,bool IsPrint=true)
@@ -32,6 +34,7 @@ namespace task3
             Console.WriteLine($"(HMAC={hmac})");
             return (pcSelection, SecretKeyText);
         }
+
         public void ChooseDice(bool isFirst)
         {
             this.Dice = diceManager.Take(RandomGenerator.GenerateRandomNumber(diceManager.AvailableCount));
@@ -41,6 +44,7 @@ namespace task3
                 Console.WriteLine($"I choose the [{this.Dice}] dice.");
 
         }
+
         public void ThrowDice(IPlayer human)
         {
             Console.WriteLine("It's time for my throw.");
@@ -49,6 +53,7 @@ namespace task3
             Console.WriteLine($"My number is {botChoice} (KEY={SecretKeyText})");
             CalculateResult(botChoice, humanChoice);           
         }
+
         private void CalculateResult(int botChoice,int humanChoice)
         {
             int botMod = (botChoice + humanChoice) % Dice.Modulo;
@@ -56,6 +61,7 @@ namespace task3
             Console.WriteLine($"My throw is {this.Dice.Values[botMod]}.");
             Score = this.Dice.Values[botMod];
         }
+
         private int ChooseNumberModulo(IPlayer human)
         {
             Console.WriteLine($"Add your number modulo {Dice.Modulo}.");           

@@ -10,13 +10,16 @@ namespace task3
     public class Dice:IEnumerable<int>
     {
         public List<int> Values { get; private set; }
+
         public int Count => Values.Count;
+
         public int Modulo => Values.Count;
 
         public Dice(List<int> values)
         {
             Values = values;
         }
+
         public Dice()
         {
             Values = new();

@@ -9,9 +9,13 @@ namespace task3
     public interface IPlayer
     {
         public void ChooseDice(bool isFirst);
+
         public void ThrowDice(IPlayer player);
+
         public (int,string) MakeChoice(int ceil,bool isPrint=true);
+
         public Dice Dice { get; }
+
         public int Score { get; }
     }
 }

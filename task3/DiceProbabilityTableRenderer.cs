@@ -9,6 +9,7 @@ namespace task3
 {
     public class DiceProbabilityTableRenderer
     {
+
         private readonly DiceProbabilityCalculator probabilityCalculator;
 
         public DiceProbabilityTableRenderer(DiceProbabilityCalculator probabilityCalculator)

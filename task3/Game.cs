@@ -46,10 +46,10 @@ namespace task3
         private (int, int) ChooseFirstPlayer()
         {
             Console.WriteLine("Let's determine who makes the first move.");
-            (int botChoice, string SecretKeyText) = bot.MakeChoice(2);
+            (int botChoice, string secretKeyText) = bot.MakeChoice(2);
             Console.WriteLine("Try to guess my selection.");
             (int humanChoice, _) = human.MakeChoice(2);
-            Console.WriteLine($"My selection: {botChoice} (KEY={SecretKeyText})");
+            Console.WriteLine($"My selection: {botChoice} (KEY={secretKeyText})");
             return (botChoice, humanChoice);
         }
     }

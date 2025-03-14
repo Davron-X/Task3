@@ -9,7 +9,9 @@ namespace task3
     public class DiceManager
     {
         public List<Dice> DiceSets { get; private set; }
+
         public List<Dice> AvailableDice { get; private set; }
+
         public int AvailableCount => AvailableDice.Count;
 
         public DiceManager(string[] dice)
